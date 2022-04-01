@@ -1,0 +1,11 @@
+{
+	"appId": "com.ultra.UltraRadio",
+	"appName": "Ultra Radio",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"androidScaleType": "CENTER_CROP"
+		}
+	}
+}

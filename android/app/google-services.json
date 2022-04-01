@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "825084958701",
+    "project_id": "comultraradio",
+    "storage_bucket": "comultraradio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825084958701:android:0683cee8cc2d9222db39e4",
+        "android_client_info": {
+          "package_name": "com.ultra.UltraRadio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825084958701-vhf3pkns1qhidmpubpu3kmcop7dnmeln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo4Xv2k7H8YR-FTTWqGglMFuhgw12tHFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825084958701-vhf3pkns1qhidmpubpu3kmcop7dnmeln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

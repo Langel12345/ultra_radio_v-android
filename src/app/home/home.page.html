@@ -1,0 +1,83 @@
+<ion-content style="height: 100%; width: 100%;" [fullscreen]="true" >  
+    <ion-refresher  slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+      <div class="principal backGround" [style.background-image]="'url('+escuchando.fondo+')' ">
+         
+          <ion-img class="image-top" src="assets/app/bannertop.png" style="width:100%;"></ion-img>  
+        
+          <div class="position-play">            
+                <ion-img class="play-stop" *ngIf="cantplay == true" src ="assets/app/play.png" (click)="Start(escuchando)"></ion-img>
+                <ion-img class="play-stop" *ngIf="cantplay == false" src ="assets/app/stop.png" (click)="Pause(escuchando)"></ion-img>            
+          </div>
+         
+          
+          <div class="frecuencia" ><img src="assets/img/frecuencia.png"/></div>
+
+          <footer>
+
+            <div class="content-nota">
+              <ion-card-header>
+                  <ion-card-subtitle><div class="sub-radio">{{escuchando.subtitle}}</div></ion-card-subtitle>
+                  <ion-card-title ><div class="title-radio">{{escuchando.title}}</div></ion-card-title>
+              </ion-card-header>
+              <ion-card-content style="color:white">
+                    {{escuchando.dias}}
+              </ion-card-content>
+          </div>    
+          <div class="contener_redes">
+            <nav class="red">
+                <ul>
+                  <li *ngIf=" escuchando.tv_online != '' " style="margin-left:4%">      
+                    <ion-icon style="zoom:2.3; color: rgb(61, 255, 21);" name="tv-outline" (click)="streamingVideo(escuchando.tv_online)"></ion-icon>
+                  </li>
+                    <li *ngIf=" escuchando.redes_sociales.facebook != '' " style="margin-left:4%">  
+                      <ion-icon style="zoom:2.3; color: rgb(61, 255, 21);" name="logo-facebook" (click)="facebook(escuchando.redes_sociales.facebook)"></ion-icon>    
+                        <!---<img class="img_redes" src="assets/img/facebook.png" (click)="facebook(escuchando.redes_sociales.facebook)"/>  -->
+                    </li>
+                    <li *ngIf=" escuchando.redes_sociales.whatsapp != '' " style="margin-left:4%">     
+                      <ion-icon style="zoom:2.3; color: rgb(61, 255, 21);" name="logo-whatsapp" (click)="whatsapp(escuchando.redes_sociales.whatsapp)"></ion-icon> 
+                      <!---  <img   class="img_redes"src="assets/img/whatsapp.png" (click)="whatsapp(escuchando.redes_sociales.whatsapp)" /> -->
+
+                    </li>
+                    <li *ngIf=" escuchando.redes_sociales.phone != '' " style="margin-left:4%">    
+                      <ion-icon style="zoom:2.3; color: rgb(61, 255, 21);"  name="call-outline" (click)="phone(escuchando.redes_sociales.phone)"  ></ion-icon>  
+                     <!-- <img class="img_redes" src="assets/img/telefono.png" (click)="phone(escuchando.redes_sociales.phone)" style="width:70%">-->
+                    </li>
+                    <li *ngIf=" escuchando.redes_sociales.instagram != '' " style="margin-left:4%">     
+                      <ion-icon  style="zoom:2.3; color: rgb(61, 255, 21); " name="logo-instagram" (click)="instagram(escuchando.redes_sociales.instagram)"></ion-icon> 
+                     <!--- <img  class="img_redes" src="assets/img/instagram.png" (click)="instagram(escuchando.redes_sociales.instagram)" />  -->
+                    </li>
+                    <li *ngIf=" escuchando.redes_sociales.twitter != '' " style="margin-left:4%">   
+                      <ion-icon style="zoom:2.3; color: rgb(61, 255, 21);"  name="logo-twitter" (click)="twitter(escuchando.redes_sociales.twitter)"></ion-icon>   
+                     <!-- <img class="img_redes" src="assets/img/twitter.png" (click)="twitter(escuchando.redes_sociales.twitter)" />  -->
+                    </li>  
+                </ul>
+            </nav>
+          </div>
+
+
+            <div class="estaciones_radio">
+              <ion-slides pager="false" [options]="slideOpts" >
+                <ion-slide *ngFor="let page of sliders; index as i"  >
+                  <ion-grid>
+                    <ion-row class="m-bottom">
+                      <ion-col size="6" *ngFor="let nota of page; index as i" >
+                        <div style="text-align: -webkit-center;">
+                          <div style="margin-bottom: 2vh;"[id]="'card_nota'+nota.id " class="notas all_notas"  (click)="cambiar(nota)">
+                            <ion-img  [src]="nota.icon"></ion-img>
+                          </div>
+                          <span  style="color:#3fff10;">{{nota.ciudad}}</span>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-slide>
+              </ion-slides> 
+            </div>
+
+          </footer>
+          
+      </div>
+</ion-content>
+

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-back-button default-href="/Home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>NOTA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+        <ion-img :src="{{notaActual.img}}"></ion-img>
+        <ion-card-subtitle>{{notaActual.subtitle}}</ion-card-subtitle>
+        <ion-card-title>{{notaActual.title}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{notaActual.content}}
+
+      </ion-card-content>
+  </ion-card>
+</ion-content>

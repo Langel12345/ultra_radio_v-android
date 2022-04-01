@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ultra Radio</string>
+    <string name="title_activity_main">Ultra Radio</string>
+    <string name="package_name">ultra.noticias</string>
+    <string name="custom_url_scheme">ultra.noticias</string>
+</resources>
